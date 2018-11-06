@@ -34,6 +34,9 @@ public class TestTennis {
 	public final String joueur1gagnejeu = "Marc a gagne le jeu !";
 	public final String joueur1avantage = "Marc Avantage !";
 	public final String egalite = "Egalite ";
+	public final String nomjoueur1 = "Marc";
+	public final int unpoint = 1;
+	public final int jeuquinze = 15;
 
 	@Before
 	public void setUpBeforeClass() throws Exception {
@@ -371,25 +374,25 @@ public class TestTennis {
 	@Test
 	public void joueur1nom() {
 
-		assertEquals(joueur1.getNom(), "Marc");
+		assertEquals(joueur1.getNom(), nomjoueur1);
 	}
 	
 	@Test
 	public void joueur1marquerpoint() {
 		joueur1.marquerpoint();
-		assertEquals(joueur1.getPoints(), 1);
+		assertEquals(joueur1.getPoints(), unpoint);
 	}
 	
 	@Test
 	public void joueur1Marquerpointjeu() {
 		joueur1.marquerpoint();
-		assertEquals(joueur1.getJeu(), 15);
+		assertEquals(joueur1.getJeu(), jeuquinze);
 	}
 	
 	@Test
 	public void joueur1gagnerjeu() {
 		joueur1.gagnerjeu();
-		assertEquals(joueur1.getSet(), 1);
+		assertEquals(joueur1.getSet(), unpoint);
 	}
 
 }
