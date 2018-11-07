@@ -384,7 +384,7 @@ public class TestTennis {
 	}
 	
 	@Test
-	public void joueur1Marquerpointjeu() {
+	public void joueur1marquerpointjeu() {
 		joueur1.marquerpoint();
 		assertEquals(joueur1.getJeu(), jeuquinze);
 	}
