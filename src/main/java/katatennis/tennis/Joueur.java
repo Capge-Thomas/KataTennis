@@ -18,15 +18,15 @@ public class Joueur {
 		this.jeu = new ArrayList<Integer>(Arrays.asList(0, 15, 30, 40));
 	}
 
-	public void marquerpoint(){
+	public void marquerPoint(){
 		this.points = points +1;
 	}
 
-	public void gagnerjeu(){
+	public void gagnerJeu(){
 		this.set = set +1;
 	}
 
-	public void gagnertiebreak(){
+	public void gagnerTieBreak(){
 		if (this.set == 6) {
 			this.set = set +1;
 		}

@@ -55,7 +55,7 @@ public class TestTennis {
 	@Test
 	public void joueur1gagnejeu() {
 		for(int jeu=0; jeu<4; jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 		}
 
 		assertEquals(partietennis.partie(), joueur1gagnejeu + scoresetjoueur1);
@@ -65,24 +65,24 @@ public class TestTennis {
 	public void joueur1joueur2scorejeuserre() {
 
 		for(int jeu=0; jeu<3; jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 		}
 
 		for(int jeu=0; jeu<2; jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 		}
-		assertEquals(partietennis.scorejeu(), scoreserre);
+		assertEquals(partietennis.scoreJeu(), scoreserre);
 	}
 
 	@Test
 	public void joueur1joueur2egalitejeu() {
 
 		for(int jeu=0; jeu<4; jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 		}
 
 		for(int jeu=0; jeu<4; jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 		}
 		assertEquals(partietennis.partie(), egalite + scoresetnul);
 	}
@@ -91,11 +91,11 @@ public class TestTennis {
 	public void joueur1avantage() {
 
 		for(int jeu=0; jeu<5; jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 		}
 
 		for(int jeu=0; jeu<4; jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 		}
 		assertEquals(partietennis.partie(), joueur1avantage + scoresetnul);
 	}
@@ -106,17 +106,17 @@ public class TestTennis {
 		for(int set = 0; set < 5;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int jeu = 0; jeu < 3;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
-		joueur1.marquerpoint();
+		joueur1.marquerPoint();
 		assertEquals(partietennis.partie(), joueur1gagneset + scoresetegalitesixzero);
 	}
 
@@ -125,7 +125,7 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
@@ -133,18 +133,18 @@ public class TestTennis {
 		for(int set = 0; set < 4;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 
 		}
 
 		for(int jeu = 0; jeu < 3;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
-		joueur1.marquerpoint();
+		joueur1.marquerPoint();
 		assertEquals(partietennis.partie(), joueur1gagneset + scoresetegalitesixquatre);
 	}
 
@@ -153,7 +153,7 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
@@ -161,12 +161,12 @@ public class TestTennis {
 		for(int set = 0; set < 5;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
-		assertEquals(partietennis.scoreset(), scoresetegalitecinqcinq);
+		assertEquals(partietennis.scoreSet(), scoresetegalitecinqcinq);
 	}
 
 	@Test
@@ -174,7 +174,7 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
@@ -182,22 +182,22 @@ public class TestTennis {
 		for(int set = 0; set < 5;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 			partietennis.partie();
 		}
 
-		assertEquals(partietennis.scoretiebreak(),scoresetiebreaknul);
+		assertEquals(partietennis.scoreTieBreak(),scoresetiebreaknul);
 	}
 
 	@Test
@@ -205,35 +205,35 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 6;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
-		assertEquals(partietennis.scoretiebreak(), scoresetiebreakjoueur1);
-		joueur1.marquerpoint();
+		assertEquals(partietennis.scoreTieBreak(), scoresetiebreakjoueur1);
+		joueur1.marquerPoint();
 		assertEquals(partietennis.partie(), joueur1gagneset + scoresetegaliteseptsix);
 	}
 
@@ -242,7 +242,7 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
@@ -250,36 +250,36 @@ public class TestTennis {
 		for(int set = 0; set < 5;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 6;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 6;jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 			partietennis.partie();
 		}
 		
-		assertEquals(partietennis.scoreset(), scoresetegalitesixsix);
-		assertEquals(partietennis.scoretiebreak(), scoresetiebreaksixsix);
-		joueur1.marquerpoint();
-		assertEquals(partietennis.scoretiebreak(), scoresetiebreakseptsix);
-		joueur1.marquerpoint();
+		assertEquals(partietennis.scoreSet(), scoresetegalitesixsix);
+		assertEquals(partietennis.scoreTieBreak(), scoresetiebreaksixsix);
+		joueur1.marquerPoint();
+		assertEquals(partietennis.scoreTieBreak(), scoresetiebreakseptsix);
+		joueur1.marquerPoint();
 		assertEquals(partietennis.partie(), joueur1gagneset + scoresetegaliteseptsix);
 	}
 
@@ -288,7 +288,7 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
@@ -296,38 +296,38 @@ public class TestTennis {
 		for(int set = 0; set < 5;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 6;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
 
 		for(int jeu = 0; jeu < 6;jeu++) {
-			joueur2.marquerpoint();
+			joueur2.marquerPoint();
 			partietennis.partie();
 		}
 
-		assertEquals(partietennis.scoretiebreak(), scoresetiebreaksixsix);
-		joueur1.marquerpoint();
-		joueur2.marquerpoint();
-		assertEquals(partietennis.scoretiebreak(), scoresetiebreakseptsept);
-		joueur1.marquerpoint();
-		joueur2.marquerpoint();
-		assertEquals(partietennis.scoretiebreak(), scoresetiebreakhuithuit);
+		assertEquals(partietennis.scoreTieBreak(), scoresetiebreaksixsix);
+		joueur1.marquerPoint();
+		joueur2.marquerPoint();
+		assertEquals(partietennis.scoreTieBreak(), scoresetiebreakseptsept);
+		joueur1.marquerPoint();
+		joueur2.marquerPoint();
+		assertEquals(partietennis.scoreTieBreak(), scoresetiebreakhuithuit);
 	}
 
 	@Test
@@ -335,7 +335,7 @@ public class TestTennis {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur1.marquerpoint();
+				joueur1.marquerPoint();
 				partietennis.partie();
 			}
 		}
@@ -343,32 +343,32 @@ public class TestTennis {
 		for(int set = 0; set < 5;set++) {
 
 			for(int jeu = 0; jeu < 4;jeu++) {
-				joueur2.marquerpoint();
+				joueur2.marquerPoint();
 				partietennis.partie();
 			}
 		}
 
 		for(int jeu = 0; jeu < 7;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
-		joueur1.marquerpoint();
+		joueur1.marquerPoint();
 		assertEquals(partietennis.partie(), joueur1gagneset + scoresetegaliteseptcinq);
 	}
 
 	@Test
 	public void verificationjoueur1meneJeu() {
-		joueur1.marquerpoint();
-		assertEquals(partietennis.joueurgagnantjeu(),joueur1);
+		joueur1.marquerPoint();
+		assertEquals(partietennis.joueurGagnantJeu(),joueur1);
 	}
 
 	@Test
 	public void verificationjoueur1meneSet() {
 		for(int jeu = 0; jeu < 4;jeu++) {
-			joueur1.marquerpoint();
+			joueur1.marquerPoint();
 			partietennis.partie();
 		}
-		assertEquals(partietennis.joueurgagnantset(),joueur1);
+		assertEquals(partietennis.joueurGagnantSet(),joueur1);
 	}
 	
 	@Test
@@ -379,19 +379,19 @@ public class TestTennis {
 	
 	@Test
 	public void joueur1marquerpoint() {
-		joueur1.marquerpoint();
+		joueur1.marquerPoint();
 		assertEquals(joueur1.getPoints(), unpoint);
 	}
 	
 	@Test
 	public void joueur1marquerpointjeu() {
-		joueur1.marquerpoint();
+		joueur1.marquerPoint();
 		assertEquals(joueur1.getJeu(), jeuquinze);
 	}
 	
 	@Test
 	public void joueur1gagnerjeu() {
-		joueur1.gagnerjeu();
+		joueur1.gagnerJeu();
 		assertEquals(joueur1.getSet(), unpoint);
 	}
 
