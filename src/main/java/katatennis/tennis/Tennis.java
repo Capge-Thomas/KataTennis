@@ -4,12 +4,12 @@ public class Tennis {
 
 	private Joueur joueur1;
 	private Joueur joueur2;
-	private int nbpointsgagnant;
-	private int nbjeugagnant;
-	private int nbtiebreakgagnant;
+	private int nbPointsGagnant;
+	private int nbJeuGagnant;
+	private int nbTieBreakGagnant;
 	public String avantage = " Avantage !";
-	public String jeugagné = " a gagne le jeu !";
-	public String setgagné = " a gagne le set !";
+	public String jeuGagné = " a gagne le jeu !";
+	public String setGagné = " a gagne le set !";
 	public String egalite = "Egalite ";
 
 
@@ -22,15 +22,15 @@ public class Tennis {
 	}
 
 	public String partie(){
-		if(joueur1.getSet() < this.nbjeugagnant && joueur2.getSet() < this.nbjeugagnant) {
+		if(joueur1.getSet() < this.nbJeuGagnant && joueur2.getSet() < this.nbJeuGagnant) {
 			return deroulementJeu();
-		} else if (joueur1.getSet() == this.nbjeugagnant &&  joueur2.getSet() == this.nbjeugagnant) {
+		} else if (joueur1.getSet() == this.nbJeuGagnant &&  joueur2.getSet() == this.nbJeuGagnant) {
 			return deroulementTieBreak();
-		} else if (joueur1.getSet() >= this.nbjeugagnant ||  joueur2.getSet() >= this.nbjeugagnant) {
+		} else if (joueur1.getSet() >= this.nbJeuGagnant ||  joueur2.getSet() >= this.nbJeuGagnant) {
 			if(Math.abs(joueur1.getSet() - joueur2.getSet())>=2){
 				String gagnantset = joueurGagnantSet().getNom();
 				reinitialiserSet();
-				return gagnantset + this.setgagné;
+				return gagnantset + this.setGagné;
 			} else {
 				return deroulementJeu();
 			}
@@ -40,19 +40,19 @@ public class Tennis {
 	}
 
 	public String deroulementJeu() {
-		if(joueur1.getPoints() >= nbpointsgagnant && joueur2.getPoints() >= nbpointsgagnant) {
+		if(joueur1.getPoints() >= nbPointsGagnant && joueur2.getPoints() >= nbPointsGagnant) {
 			if(Math.abs(joueur1.getPoints() - joueur2.getPoints())>=2){
 				joueurGagnantJeu().gagnerJeu();
-				return verificationResultatSet(this.nbjeugagnant,2);
+				return verificationResultatSet(this.nbJeuGagnant,2);
 
 			} else if(joueur1.getPoints() == joueur2.getPoints()) {
 				return egalite+ scoreSet();
 			} else {
 				return joueurGagnantJeu().getNom() + this.avantage + scoreSet();
 			}
-		} else if(joueur1.getPoints() > nbpointsgagnant || joueur2.getPoints() > nbpointsgagnant){
+		} else if(joueur1.getPoints() > nbPointsGagnant || joueur2.getPoints() > nbPointsGagnant){
 			joueurGagnantJeu().gagnerJeu();
-			return verificationResultatSet(this.nbjeugagnant,2);
+			return verificationResultatSet(this.nbJeuGagnant,2);
 
 		} else {
 			return  scoreJeu() + scoreSet();
@@ -60,10 +60,10 @@ public class Tennis {
 	}
 
 	public String deroulementTieBreak() {
-		if(joueur1.getPoints() >= this.nbtiebreakgagnant || joueur2.getPoints() >= this.nbtiebreakgagnant) {
+		if(joueur1.getPoints() >= this.nbTieBreakGagnant || joueur2.getPoints() >= this.nbTieBreakGagnant) {
 			if(Math.abs(joueur1.getPoints() - joueur2.getPoints())>=2){
 				joueurGagnantJeu().gagnerTieBreak();
-				return verificationResultatSet(this.nbtiebreakgagnant,1);
+				return verificationResultatSet(this.nbTieBreakGagnant,1);
 
 			} else {
 				return scoreTieBreak() + scoreSet();
@@ -123,11 +123,11 @@ public class Tennis {
 				String scoreset = scoreSet();
 				String gagnantset = joueurGagnantSet().getNom();
 				reinitialiserSet();
-				return gagnantset + this.setgagné + scoreset;
+				return gagnantset + this.setGagné + scoreset;
 			}
-			return gagnantjeu + this.jeugagné + scoreSet();
+			return gagnantjeu + this.jeuGagné + scoreSet();
 		} else {
-			return gagnantjeu + this.jeugagné + scoreSet();
+			return gagnantjeu + this.jeuGagné + scoreSet();
 		}
 
 	}
@@ -145,27 +145,27 @@ public class Tennis {
 	}
 
 	public int getNbJeuGagnant() {
-		return nbpointsgagnant;
+		return nbPointsGagnant;
 	}
 
 	public void setNbPointsGagnant(int nbpointsgagnant) {
-		this.nbpointsgagnant = nbpointsgagnant;
+		this.nbPointsGagnant = nbpointsgagnant;
 	}
 
 	public int getNbSetGagnant() {
-		return nbjeugagnant;
+		return nbJeuGagnant;
 	}
 
 	public void setNbJeuGagnant(int nbjeugagnant) {
-		this.nbjeugagnant = nbjeugagnant;
+		this.nbJeuGagnant = nbjeugagnant;
 	}
 
 	public int getNbTieBreakGagnant() {
-		return nbtiebreakgagnant;
+		return nbTieBreakGagnant;
 	}
 
 	public void setNbTieBreakGagnant(int nbtiebreakgagnant) {
-		this.nbtiebreakgagnant = nbtiebreakgagnant;
+		this.nbTieBreakGagnant = nbtiebreakgagnant;
 	}
 
 }
