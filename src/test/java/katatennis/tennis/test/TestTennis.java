@@ -53,7 +53,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1gagnejeu() {
+	public void joueur1GagneJeu() {
 		for(int jeu=0; jeu<4; jeu++) {
 			joueur1.marquerPoint();
 		}
@@ -62,7 +62,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1joueur2scorejeuserre() {
+	public void joueur1joueur2ScoreJeuSerre() {
 
 		for(int jeu=0; jeu<3; jeu++) {
 			joueur1.marquerPoint();
@@ -75,7 +75,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1joueur2egalitejeu() {
+	public void joueur1joueur2EgaliteJeu() {
 
 		for(int jeu=0; jeu<4; jeu++) {
 			joueur1.marquerPoint();
@@ -88,7 +88,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1avantage() {
+	public void joueur1Avantage() {
 
 		for(int jeu=0; jeu<5; jeu++) {
 			joueur1.marquerPoint();
@@ -101,7 +101,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1gagneSet() {
+	public void joueur1GagneSet() {
 
 		for(int set = 0; set < 5;set++) {
 
@@ -121,7 +121,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1gagnesetsixquatre() {
+	public void joueur1GagneSetSixQuatre() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -149,7 +149,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1joueur2egalitesetcinqcinq() {
+	public void joueur1joueur2EgaliteSetCinqCinq() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -170,7 +170,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1joueur2egalitesetsixsix() {
+	public void joueur1joueur2EgaliteSetSixSix() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -201,7 +201,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1gagnetiebreakseptzero() {
+	public void joueur1GagneTieBreakSeptZero() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -238,7 +238,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1gagnetiebreakhuitsix() {
+	public void joueur1GagneTieBreakHuitSix() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -284,7 +284,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1egalitetiebreakhuithuit() {
+	public void joueur1EgaliteTieBreakHuitHuit() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -331,7 +331,7 @@ public class TestTennis {
 	}
 
 	@Test
-	public void joueur1gagnesetseptcinq() {
+	public void joueur1GagneSetSeptCinq() {
 
 		for(int set = 0; set < 5;set++) {
 			for(int jeu = 0; jeu < 4;jeu++) {
@@ -357,13 +357,13 @@ public class TestTennis {
 	}
 
 	@Test
-	public void verificationjoueur1meneJeu() {
+	public void verificationJoueur1MeneJeu() {
 		joueur1.marquerPoint();
 		assertEquals(partietennis.joueurGagnantJeu(),joueur1);
 	}
 
 	@Test
-	public void verificationjoueur1meneSet() {
+	public void verificationJoueur1MeneSet() {
 		for(int jeu = 0; jeu < 4;jeu++) {
 			joueur1.marquerPoint();
 			partietennis.partie();
@@ -372,25 +372,25 @@ public class TestTennis {
 	}
 	
 	@Test
-	public void joueur1nom() {
+	public void joueur1Nom() {
 
 		assertEquals(joueur1.getNom(), nomjoueur1);
 	}
 	
 	@Test
-	public void joueur1marquerpoint() {
+	public void joueur1MarquerPoint() {
 		joueur1.marquerPoint();
 		assertEquals(joueur1.getPoints(), unpoint);
 	}
 	
 	@Test
-	public void joueur1marquerpointjeu() {
+	public void joueur1MarquerPointJeu() {
 		joueur1.marquerPoint();
 		assertEquals(joueur1.getJeu(), jeuquinze);
 	}
 	
 	@Test
-	public void joueur1gagnerjeu() {
+	public void joueur1GagnerJeu() {
 		joueur1.gagnerJeu();
 		assertEquals(joueur1.getSet(), unpoint);
 	}
