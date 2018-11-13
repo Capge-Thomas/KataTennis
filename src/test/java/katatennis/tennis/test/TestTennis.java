@@ -15,7 +15,6 @@ public class TestTennis {
 	public static Joueur joueur2;
 	public static Tennis partieTennis;
 	public final String debutPartie = " Jeu :0 - 0 Set :0 - 0";
-	public final String scoreSerre = " Jeu :40 - 30";
 	public final String scoreSetNul = " Set :0 - 0";
 	public final String scoreSetEgaliteCinqCinq = " Set :5 - 5";
 	public final String scoreSetEgaliteSixSix = " Set :6 - 6";
@@ -31,12 +30,19 @@ public class TestTennis {
 	public final String scoreTieBreakHuitHuit = " TieBreak :8 - 8";
 	public final String scoreTieBreakSeptSix = " TieBreak :7 - 6";
 	public final String joueur1GagneSet = "Marc a gagne le set !";
-	public final String joueur1GagneJeu = "Marc a gagne le jeu !";
-	public final String joueur1Avantage = "Marc Avantage !";
+	public final String scoreQuinzeZero = " Jeu :15 - 0";
+	public final String scoreTrenteZero = " Jeu :30 - 0";
+	public final String scoreQuaranteZero = " Jeu :40 - 0";
+	public final String scoreQuaranteQuinze = " Jeu :40 - 15";
+	public final String scoreQuaranteTrente = " Jeu :40 - 30";
+	public final String scoreQuaranteQuarante = " Jeu :40 - 40";
 	public final String egalite = "Egalite ";
+	public final String joueur1Avantage = "Marc Avantage !";
+	public final String joueur2Avantage = "Jean Avantage !";
+	public final String joueur1GagneJeu = "Marc a gagne le jeu !";
 	public final String nomJoueur1 = "Marc";
 	public final int unPoint = 1;
-	public final int jeuQuinze = 15;
+	
 
 	@Before
 	public void setUpBeforeClass() throws Exception {
@@ -51,7 +57,16 @@ public class TestTennis {
 
 		assertEquals(partieTennis.partie(), debutPartie);
 	}
+	
+	@Test
+	public void joueur1Joueur2() {
+		for(int jeu=0; jeu<4; jeu++) {
+			joueur1.marquerPoint();
+		}
 
+		assertEquals(partieTennis.partie(), joueur1GagneJeu + scoreSetJoueur1);
+	}
+	
 	@Test
 	public void joueur1GagneJeu() {
 		for(int jeu=0; jeu<4; jeu++) {
@@ -60,9 +75,50 @@ public class TestTennis {
 
 		assertEquals(partieTennis.partie(), joueur1GagneJeu + scoreSetJoueur1);
 	}
-
+	
 	@Test
-	public void joueur1joueur2ScoreJeuSerre() {
+	public void joueur1joueur2ScoreJeuQuinzeZero() {
+		joueur1.marquerPoint();
+		assertEquals(partieTennis.scoreJeu(), scoreQuinzeZero);
+	}
+
+	
+	@Test
+	public void joueur1joueur2ScoreJeuTrenteZero() {
+
+		for(int jeu=0; jeu<2; jeu++) {
+			joueur1.marquerPoint();
+		}
+
+		assertEquals(partieTennis.scoreJeu(), scoreTrenteZero);
+	}
+	
+	@Test
+	public void joueur1joueur2ScoreJeuQuaranteZero() {
+
+		for(int jeu=0; jeu<3; jeu++) {
+			joueur1.marquerPoint();
+		}
+
+		assertEquals(partieTennis.scoreJeu(), scoreQuaranteZero);
+	}
+	
+	
+	@Test
+	public void joueur1joueur2ScoreJeuQuaranteQuinze() {
+
+		for(int jeu=0; jeu<3; jeu++) {
+			joueur1.marquerPoint();
+		}
+
+		for(int jeu=0; jeu<1; jeu++) {
+			joueur2.marquerPoint();
+		}
+		assertEquals(partieTennis.scoreJeu(), scoreQuaranteQuinze);
+	}
+	
+	@Test
+	public void joueur1joueur2ScoreJeuQuaranteTrente() {
 
 		for(int jeu=0; jeu<3; jeu++) {
 			joueur1.marquerPoint();
@@ -71,8 +127,22 @@ public class TestTennis {
 		for(int jeu=0; jeu<2; jeu++) {
 			joueur2.marquerPoint();
 		}
-		assertEquals(partieTennis.scoreJeu(), scoreSerre);
+		assertEquals(partieTennis.scoreJeu(), scoreQuaranteTrente);
 	}
+	
+	@Test
+	public void joueur1joueur2ScoreJeuQuaranteQuarante() {
+
+		for(int jeu=0; jeu<3; jeu++) {
+			joueur1.marquerPoint();
+		}
+
+		for(int jeu=0; jeu<3; jeu++) {
+			joueur2.marquerPoint();
+		}
+		assertEquals(partieTennis.scoreJeu(), scoreQuaranteQuarante);
+	}
+
 
 	@Test
 	public void joueur1joueur2EgaliteJeu() {
@@ -84,7 +154,7 @@ public class TestTennis {
 		for(int jeu=0; jeu<4; jeu++) {
 			joueur2.marquerPoint();
 		}
-		assertEquals(partieTennis.partie(), egalite + scoreSetNul);
+		assertEquals(partieTennis.scoreJeu(), egalite);
 	}
 
 	@Test
@@ -98,6 +168,19 @@ public class TestTennis {
 			joueur2.marquerPoint();
 		}
 		assertEquals(partieTennis.partie(), joueur1Avantage + scoreSetNul);
+	}
+	
+	@Test
+	public void joueur2Avantage() {
+
+		for(int jeu=0; jeu<3; jeu++) {
+			joueur1.marquerPoint();
+		}
+
+		for(int jeu=0; jeu<4; jeu++) {
+			joueur2.marquerPoint();
+		}
+		assertEquals(partieTennis.partie(), joueur2Avantage + scoreSetNul);
 	}
 
 	@Test
@@ -373,27 +456,8 @@ public class TestTennis {
 	
 	@Test
 	public void joueur1Nom() {
-
 		assertEquals(joueur1.getNom(), nomJoueur1);
 	}
 	
-	@Test
-	public void joueur1MarquerPoint() {
-		joueur1.marquerPoint();
-		assertEquals(joueur1.getPoints(), unPoint);
-	}
-	
-	@Test
-	public void joueur1MarquerPointJeu() {
-		joueur1.marquerPoint();
-		assertEquals(joueur1.getJeu(), jeuQuinze);
-	}
-	
-	@Test
-	public void joueur1GagnerJeu() {
-		joueur1.gagnerJeu();
-		assertEquals(joueur1.getSet(), unPoint);
-	}
-
 }
 

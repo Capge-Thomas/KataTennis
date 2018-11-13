@@ -45,10 +45,10 @@ public class Tennis {
 				joueurGagnantJeu().gagnerJeu();
 				return verificationResultatSet(this.nbJeuGagnant,2);
 
-			} else if(joueur1.getPoints() == joueur2.getPoints()) {
-				return egalite+ scoreSet();
-			} else {
+			} else if(joueur1.getPoints() > joueur2.getPoints() || joueur1.getPoints() < joueur2.getPoints() ) {
 				return joueurGagnantJeu().getNom() + this.avantage + scoreSet();
+			} else {
+				return scoreJeu()+ scoreSet();
 			}
 		} else if(joueur1.getPoints() > nbPointsGagnant || joueur2.getPoints() > nbPointsGagnant){
 			joueurGagnantJeu().gagnerJeu();
@@ -137,7 +137,11 @@ public class Tennis {
 	}
 
 	public String scoreJeu() {
-		return " Jeu :" + joueur1.getJeu() + " - " + joueur2.getJeu();
+		if((joueur1.getPoints()>= 4 && joueur2.getPoints()>=4) && (joueur1.getPoints() == joueur2.getPoints())) {
+			return egalite;
+		} else {
+			return " Jeu :" + joueur1.getJeu() + " - " + joueur2.getJeu();
+		}
 	}
 
 	public String scoreTieBreak() {
